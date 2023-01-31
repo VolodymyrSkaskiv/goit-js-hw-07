@@ -3,8 +3,8 @@ import { galleryItems } from "./gallery-items.js";
 
 // console.log(galleryItems);
 const cardMarkup = makeGalleryMarkup(galleryItems);
-const galleryFilld = document.querySelector(".gallery");
-galleryFilld.insertAdjacentHTML("beforeend", cardMarkup);
+const galleryContainer = document.querySelector(".gallery");
+galleryContainer.insertAdjacentHTML("beforeend", cardMarkup);
 
 function makeGalleryMarkup(cards) {
   return galleryItems
@@ -24,3 +24,19 @@ function makeGalleryMarkup(cards) {
     })
     .join("");
 }
+
+//Делегування
+
+galleryContainer.addEventListener("click", onGalleryContainer);
+
+function onGalleryContainer(evt) {
+  const isImageGalleryEl = evt.target.classList.contains(gallery__image);
+  if (!isImageGalleryEL) {
+    return;
+  }
+
+  openModal();
+  console.log(evt.target);
+}
+
+// rel = ”noopener noreferrer”
