@@ -33,7 +33,6 @@ function onChangeImageSrc(evt) {
   //переформатовуємо закінчення файла  _340.jpg у 1280.jpg
   let srcImg = evt.target.src;
   srcImg = srcImg.slice(0, srcImg.length - 8) + "1280.jpg";
-
   openModal(srcImg);
 }
 
